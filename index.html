@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clic Studio - Nossos Links</title>
+<link rel="icon" type="image/png" href="imagens/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #1c1c24;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem 3rem;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 440px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0 1.5rem;
+    text-align: center;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #9333EA 0%, #7c22d4 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 0 3px #252530, 0 0 0 4px #9333EA44;
+  }
+
+  .avatar span {
+    font-family: 'Syne', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  .brand-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #f4f4f8;
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+  }
+
+  .brand-tagline {
+    font-size: 13px;
+    color: #8a8aaa;
+    margin-bottom: 8px;
+  }
+
+  /* Meta Info (Localização e Horários de forma integrada) */
+  .brand-meta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .brand-meta-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #6a6a8a;
+  }
+
+  .brand-meta-item svg {
+    width: 13px;
+    height: 13px;
+    color: #9333EA;
+    flex-shrink: 0;
+  }
+
+  .hours-inline {
+    color: #8a8aaa;
+  }
+
+  .hours-dot {
+    color: #4a4a60;
+    margin: 0 2px;
+  }
+
+  .status-badge {
+    font-size: 10px;
+    font-weight: 500;
+    background: rgba(147, 51, 234, 0.15);
+    color: #a855f7;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 4px;
+  }
+
+  .social-hours-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.75rem;
+    margin-top: 0.25rem;
+  }
+
+  /* Social Top */
+  .social-row {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+  }
+
+
+  .soc {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #252530;
+    border: 1px solid #2e2e3a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: border-color 0.15s, background 0.15s;
+    font-size: 18px;
+  }
+
+  .soc:hover {
+    background: #2e2e3a;
+    border-color: #9333EA55;
+  }
+
+  .soc svg {
+    width: 18px;
+    height: 18px;
+    color: #9333EA;
+  }
+
+  .soc.soc-split {
+    flex: 1;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    padding: 11px 8px;
+  }
+
+  .soc.soc-split:hover {
+    background: #2a2a38;
+    border-color: #9333EA44;
+  }
+
+  /* Marquee */
+  .marquee-wrap {
+    overflow: hidden;
+    margin-bottom: 1.75rem;
+    border-radius: 12px;
+    padding: 10px 0;
+    position: relative;
+  }
+
+  .marquee-wrap::before,
+  .marquee-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .marquee-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, #1c1c24, transparent);
+  }
+
+  .marquee-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, #1c1c24, transparent);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 0;
+    width: max-content;
+    animation: marquee 22s linear infinite;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 18px;
+    white-space: nowrap;
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #aaa8c0;
+    letter-spacing: 0.4px;
+  }
+
+  .marquee-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #9333EA;
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+
+  /* Container específico para centralizar o horário no novo local */
+  .hours-middle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.75rem;
+  }
+
+  /* Section label */
+  .section-label {
+    font-size: 10px;
+    color: #5a5a72;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* Buttons */
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 1.75rem;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 100px;
+    padding: 13px 18px;
+    transition: transform 0.12s ease, opacity 0.12s ease;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(100deg, #7712c9 10%, #bd42fa 50%, #700dbf 90%);
+    box-shadow: 0 4px 15px rgba(119, 18, 201, 0.2);
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+    filter: brightness(1.05);
+  }
+
+  .btn:active {
+    transform: scale(0.98);
+  }
+
+  .btn-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .btn-icon svg {
+    color: #fff !important;
+  }
+
+  .btn-label {
+    flex: 1;
+    text-align: center;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #fff !important;
+  }
+
+  .btn-arrow {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    opacity: 0.6;
+    color: #fff !important;
+  }
+
+  /* Divider */
+  .divider {
+    border: none;
+    border-top: 1px solid #2a2a35;
+    margin: 1.5rem 0;
+  }
+
+  .contact-row-split {
+    display: flex;
+    gap: 8px;
+  }
+
+  .contact-half {
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+    padding: 11px 10px;
+  }
+
+  .contact-half span {
+    font-size: 11px;
+    word-break: break-all;
+  }
+
+  /* Contacts */
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 1.75rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 16px;
+    background: #252530;
+    border: 1px solid #2e2e3a;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .contact-item:hover {
+    border-color: #9333EA44;
+    background: #2a2a38;
+  }
+
+  .contact-item svg {
+    color: #9333EA;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+  }
+
+  .contact-item span {
+    font-size: 13px;
+    color: #aaa8c0;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 0.5rem 0 1rem;
+    text-align: center;
+  }
+
+  .footer-copy {
+    font-size: 11px;
+    color: #5a5a72;
+    letter-spacing: 0.3px;
+  }
+
+  /* Mini map */
+  .minimap {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #343442;
+    margin-bottom: 1.75rem;
+  }
+
+  .minimap iframe {
+    display: block;
+    width: 100%;
+    height: 180px;
+    filter: grayscale(30%) contrast(1.05);
+  }
+
+  /* --- POPUP / MODAL STYLES --- */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 15, 20, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    padding: 1rem;
+  }
+
+  .modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modal-content {
+    background: #1c1c24;
+    border: 1px solid #343442;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 24px;
+    padding: 1.75rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    transform: translateY(20px);
+    transition: transform 0.2s ease;
+    position: relative;
+  }
+
+  .modal-overlay.active .modal-content {
+    transform: translateY(0);
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .modal-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #f4f4f8;
+  }
+
+  .modal-close {
+    background: #252530;
+    border: 1px solid #2e2e3a;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: #aaa8c0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .modal-close:hover {
+    background: #2e2e3a;
+    color: #fff;
+  }
+
+  .modal-close svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .popup-btn-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .popup-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: #252530;
+    border: 1px solid #2e2e3a;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: border-color 0.15s, background 0.15s, transform 0.1s;
+  }
+
+  .popup-btn:hover {
+    border-color: #9333EA88;
+    background: #2a2a38;
+    transform: translateX(2px);
+  }
+
+  .popup-btn-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: rgba(147, 51, 234, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a855f7;
+    flex-shrink: 0;
+  }
+
+  .popup-btn-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .popup-btn-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .popup-btn-title {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #f4f4f8;
+  }
+
+  .popup-btn-desc {
+    font-size: 11px;
+    color: #6a6a8a;
+    margin-top: 2px;
+  }
+
+  .popup-btn-arrow {
+    width: 14px;
+    height: 14px;
+    color: #5a5a72;
+  }
+
+  /* --- GALLERY MODAL --- */
+  .gallery-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(10, 9, 18, 0.92);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    padding: 1rem;
+  }
+
+  .gallery-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .gallery-box {
+    background: #1c1c24;
+    border: 1px solid #343442;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 420px;
+    overflow: hidden;
+    transform: translateY(24px);
+    transition: transform 0.25s ease;
+    position: relative;
+  }
+
+  .gallery-overlay.active .gallery-box {
+    transform: translateY(0);
+  }
+
+  .gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 1.25rem 0.9rem;
+    border-bottom: 1px solid #2a2a35;
+  }
+
+  .gallery-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #f4f4f8;
+  }
+
+  .gallery-counter {
+    font-size: 12px;
+    color: #6a6a8a;
+  }
+
+  .gallery-close {
+    background: #252530;
+    border: 1px solid #2e2e3a;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    color: #aaa8c0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s;
+    flex-shrink: 0;
+    margin-left: 10px;
+  }
+
+  .gallery-close:hover { background: #2e2e3a; color: #fff; }
+  .gallery-close svg { width: 16px; height: 16px; }
+
+  .gallery-stage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #111118;
+    overflow: hidden;
+  }
+
+  .gallery-img {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .gallery-img.active { opacity: 1; }
+
+  .gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(28,28,36,0.75);
+    border: 1px solid #343442;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.15s;
+    color: #fff;
+  }
+
+  .gallery-nav:hover { background: rgba(147,51,234,0.35); border-color: #9333EA55; }
+  .gallery-nav svg { width: 16px; height: 16px; }
+  .gallery-nav-prev { left: 10px; }
+  .gallery-nav-next { right: 10px; }
+
+  .gallery-dots-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px 0 14px;
+    flex-wrap: wrap;
+  }
+
+  .gallery-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #3a3a48;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.25s;
+  }
+
+  .gallery-dot.active {
+    background: #9333EA;
+    transform: scale(1.35);
+  }
+
+  /* --- HERO VIDEO --- */
+  .hero-video-wrap {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 1.75rem;
+    background: #0f0f16;
+  }
+
+  .hero-video-wrap video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(10,8,20,0.2) 0%, rgba(10,8,20,0.75) 100%);
+    z-index: 1;
+  }
+
+  .hero-video-text {
+    position: absolute;
+    bottom: 22px;
+    left: 22px;
+    right: 22px;
+    z-index: 2;
+  }
+
+  .hero-video-badge {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #a855f7;
+    background: rgba(147,51,234,0.18);
+    border: 1px solid rgba(147,51,234,0.3);
+    padding: 3px 10px;
+    border-radius: 100px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  .hero-video-text h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 8px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+    letter-spacing: 0.2px;
+  }
+
+  .hero-hours-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .hero-hours-row svg {
+    width: 13px;
+    height: 13px;
+    color: #a855f7;
+    flex-shrink: 0;
+  }
+
+  .hero-hours-row span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+  }
+
+  .hero-agenda-btn {
+    font-size: 10px;
+    font-weight: 500;
+    color: #a855f7;
+    background: rgba(147,51,234,0.18);
+    border: 1px solid rgba(147,51,234,0.35);
+    padding: 3px 10px;
+    border-radius: 100px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+
+  .hero-agenda-btn:hover {
+    background: rgba(147,51,234,0.32);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO VIDEO — substitua 'hero.mp4' pelo nome do teu ficheiro de vídeo -->
+  <div class="hero-video-wrap">
+    <video autoplay muted loop playsinline preload="auto" poster="">
+      <source src="video/videohero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+    <div class="hero-video-text">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <img src="imagens/logo.png" alt="Clic Studio" style="width:28px;height:28px;object-fit:contain;filter:brightness(0) invert(1);">
+        <h2 style="margin:0;">Clic Studio</h2>
+      </div>
+      <div class="hero-hours-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>Seg a Sex: 9h-18h <span class="hours-dot">•</span> Sáb: 10h-13h</span>
+        <a href="https://wa.me/351911567986?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20como%20est%C3%A3o%20os%20hor%C3%A1rios%20para%20essa%20semana%21" target="_blank" class="hero-agenda-btn">Ver Agenda</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="social-hours-container">
+    <div class="social-row">
+      <a href="https://www.instagram.com/clicstudio.pt/" target="_blank" class="soc soc-split" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.facebook.com/815261168336691?ref=NONE_xav_ig_profile_page_web" target="_blank" class="soc soc-split" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="mailto:geral@clicstudio.pt" class="soc soc-split" aria-label="E-mail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="marquee-item"><span class="marquee-dot"></span>Fotografia Profissional</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Studio de Podcast</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Aluguer por Hora</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Cenários Versáteis</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Matosinhos, Porto</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Iluminação de Topo</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Gravação Profissional</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Espaço Criativo</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Equipamento Completo</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Produção Visual & Áudio</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Fotografia Profissional</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Studio de Podcast</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Aluguer por Hora</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Cenários Versáteis</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Matosinhos, Porto</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Iluminação de Topo</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Gravação Profissional</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Espaço Criativo</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Equipamento Completo</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Produção Visual & Áudio</span>
+    </div>
+  </div>
+
+  <p class="section-label">Acesso Rápido</p>
+
+  <div class="btn-group">
+    <a href="https://wa.me/351911567986" target="_blank" class="btn">
+      <span class="btn-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.38 2 2 0 0 1 3.55 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </span>
+      <span class="btn-label">Atendimento Personalizado</span>
+      <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+
+    <button type="button" id="openBookingModal" class="btn">
+      <span class="btn-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </span>
+      <span class="btn-label">Reservar o Estúdio</span>
+      <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+
+    <button type="button" id="openQuoteModal" class="btn">
+      <span class="btn-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </span>
+      <span class="btn-label">Fazer Orçamento</span>
+      <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+
+    <button type="button" id="openGalleryModal" class="btn">
+      <span class="btn-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      </span>
+      <span class="btn-label">Veja um pouco do estúdio</span>
+      <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+
+    <a href="https://clicstudio.pt" target="_blank" class="btn">
+      <span class="btn-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </span>
+      <span class="btn-label">Visite Nosso Site</span>
+      <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+
+    <a href="https://www.google.com/maps/place/CLIC+STUDIO+-+Est%C3%BAdio+de+Podcast+e+fotografia/@41.1835326,-8.6941174,17z/data=!3m1!4b1!4m6!3m5!1s0xd246f5aaf011ce5:0xc1cd1d7635a31e62!8m2!3d41.1835326!4d-8.6941174!16s%2Fg%2F11ykk_hc0c?hl=pt-PT&entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn">
+      <span class="btn-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-8-6.5-8-11.5A8 8 0 0 1 20 9.5C20 14.5 12 21 12 21z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      </span>
+      <span class="btn-label">Nossa Localização</span>
+      <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+  </div>
+
+  <div class="minimap">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3002.753993146357!2d-8.6941174!3d41.1835326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd246f5aaf011ce5%3A0xc1cd1d7635a31e62!2sCLIC%20STUDIO%20-%20Est%C3%BAdio%20de%20Podcast%20e%20fotografia!5e0!3m2!1spt-PT!2sbr!4v1780938820459!5m2!1spt-PT!2sbr"
+      width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <hr class="divider">
+
+  <p class="section-label">Contactos</p>
+  <div class="contact-list">
+    <div class="contact-row-split">
+      <a href="https://wa.me/351911567986" target="_blank" class="contact-item contact-half">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span>+351 911 567 986</span>
+      </a>
+      <a href="mailto:geral@clicstudio.pt" class="contact-item contact-half">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>geral@clicstudio.pt</span>
+      </a>
+    </div>
+    <a href="https://www.google.com/maps/place/CLIC+STUDIO+-+Est%C3%BAdio+de+Podcast+e+fotografia/@41.1835326,-8.6941174,17z/data=!3m1!4b1!4m6!3m5!1s0xd246f5aaf011ce5:0xc1cd1d7635a31e62!8m2!3d41.1835326!4d-8.6941174!16s%2Fg%2F11ykk_hc0c?hl=pt-PT&entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="contact-item" style="justify-content:center;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-8-6.5-8-11.5A8 8 0 0 1 20 9.5C20 14.5 12 21 12 21z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      <span>Av. Serpa Pinto 304, 4450-276 Matosinhos</span>
+    </a>
+  </div>
+
+  <div class="footer">
+    <img src="imagens/logo.png" alt="Clic Studio" style="width:28px;height:28px;object-fit:contain;margin-bottom:6px;opacity:0.7;">
+    <p class="footer-copy">© 2026 Clic Studio. Todos os direitos reservados.</p>
+  </div>
+
+</div>
+
+<div class="modal-overlay" id="bookingModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title">Escolha o Serviço</h3>
+      <button class="modal-close" id="closeBookingModal" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    
+    <div class="popup-btn-list">
+      <a href="https://wa.me/351911567986?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20Est%C3%BAdio%20para%20Podcast%21%20Poderia%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank" class="popup-btn">
+        <div class="popup-btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+        </div>
+        <div class="popup-btn-text">
+          <span class="popup-btn-title">Aluguer de Podcast</span>
+          <span class="popup-btn-desc">Gravação de áudio e vídeo profissional</span>
+        </div>
+        <svg class="popup-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+
+      <a href="https://wa.me/351911567986?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20o%20Est%C3%BAdio%20para%20Ensaio%20Fotogr%C3%A1fico%21%20Poderia%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank" class="popup-btn">
+        <div class="popup-btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+        <div class="popup-btn-text">
+          <span class="popup-btn-title">Aluguer de Estúdio</span>
+          <span class="popup-btn-desc">Cenários versáteis e iluminação de topo</span>
+        </div>
+        <svg class="popup-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="quoteModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title">Escolha o Serviço</h3>
+      <button class="modal-close" id="closeQuoteModal" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    
+    <div class="popup-btn-list">
+      <a href="https://wa.me/351911567986?text=Ol%C3%A1%21%20Gostaria%20de%20or%C3%A7ar%20o%20Est%C3%BAdio%20para%20Podcast%21%20Poderia%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank" class="popup-btn">
+        <div class="popup-btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+        </div>
+        <div class="popup-btn-text">
+          <span class="popup-btn-title">Orçamento para Podcast</span>
+          <span class="popup-btn-desc">Consulte valores e pacotes de episódios</span>
+        </div>
+        <svg class="popup-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+
+      <a href="https://wa.me/351911567986?text=Ol%C3%A1%21%20Gostaria%20de%20or%C3%A7ar%20o%20Est%C3%BAdio%20para%20Ensaio%20Fotogr%C3%A1fico%21%20Poderia%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank" class="popup-btn">
+        <div class="popup-btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+        <div class="popup-btn-text">
+          <span class="popup-btn-title">Orçamento para o Estúdio</span>
+          <span class="popup-btn-desc">Peça uma cotação para o seu projeto criativo</span>
+        </div>
+        <svg class="popup-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- GALLERY MODAL -->
+<div class="gallery-overlay" id="galleryModal">
+  <div class="gallery-box">
+    <div class="gallery-header">
+      <div>
+        <p class="gallery-title">Clic Studio</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="gallery-counter" id="galleryCounter">1 / 12</span>
+        <button class="gallery-close" id="galleryClose" aria-label="Fechar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="gallery-stage">
+      <img class="gallery-img active" src="imagens/estudio1.jpg" alt="Estúdio 1">
+      <img class="gallery-img" src="imagens/estudio2.jpg" alt="Estúdio 2">
+      <img class="gallery-img" src="imagens/estudio3.jpg" alt="Estúdio 3">
+      <img class="gallery-img" src="imagens/estudio4.jpg" alt="Estúdio 4">
+      <img class="gallery-img" src="imagens/estudio5.jpg" alt="Estúdio 5">
+      <img class="gallery-img" src="imagens/estudio6.jpg" alt="Estúdio 6">
+      <img class="gallery-img" src="imagens/estudio7.jpg" alt="Estúdio 7">
+      <img class="gallery-img" src="imagens/estudio8.jpg" alt="Estúdio 8">
+      <img class="gallery-img" src="imagens/estudio9.jpg" alt="Estúdio 9">
+      <img class="gallery-img" src="imagens/estudio10.jpg" alt="Estúdio 10">
+      <img class="gallery-img" src="imagens/estudio11.jpg" alt="Estúdio 11">
+      <img class="gallery-img" src="imagens/estudio12.jpg" alt="Estúdio 12">
+      <button class="gallery-nav gallery-nav-prev" id="galleryPrev" aria-label="Anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="gallery-nav gallery-nav-next" id="galleryNext" aria-label="Próxima">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+    <div class="gallery-dots-row">
+      <button class="gallery-dot active" onclick="galleryGoTo(0)" aria-label="Foto 1"></button>
+      <button class="gallery-dot" onclick="galleryGoTo(1)" aria-label="Foto 2"></button>
+      <button class="gallery-dot" onclick="galleryGoTo(2)" aria-label="Foto 3"></button>
+      <button class="gallery-dot" onclick="galleryGoTo(3)" aria-label="Foto 4"></button>
+      <button class="gallery-dot" onclick="galleryGoTo(4)" aria-label="Foto 5"></button>
+      <button class="gallery-dot" onclick="galleryGoTo(5)" aria-label="Foto 6"></button>
+      <button class="gallery-dot" onclick="galleryGoTo(6)" aria-label="Foto 7"></button>
+      <button class="gallery-dot" onclick="galleryGoTo(7)" aria-label="Foto 8"></button>
+      <button class="gallery-dot" onclick="galleryGoTo(8)" aria-label="Foto 9"></button>
+      <button class="gallery-dot" onclick="galleryGoTo(9)" aria-label="Foto 10"></button>
+      <button class="gallery-dot" onclick="galleryGoTo(10)" aria-label="Foto 11"></button>
+      <button class="gallery-dot" onclick="galleryGoTo(11)" aria-label="Foto 12"></button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const openBookingBtn = document.getElementById('openBookingModal');
+  const closeBookingBtn = document.getElementById('closeBookingModal');
+  const bookingModal = document.getElementById('bookingModal');
+
+  const openQuoteBtn = document.getElementById('openQuoteModal');
+  const closeQuoteBtn = document.getElementById('closeQuoteModal');
+  const quoteModal = document.getElementById('quoteModal');
+
+  openBookingBtn.addEventListener('click', () => bookingModal.classList.add('active'));
+  closeBookingBtn.addEventListener('click', () => bookingModal.classList.remove('active'));
+
+  openQuoteBtn.addEventListener('click', () => quoteModal.classList.add('active'));
+  closeQuoteBtn.addEventListener('click', () => quoteModal.classList.remove('active'));
+
+  // Gallery
+  const galleryOverlay = document.getElementById('galleryModal');
+  const galleryImgs = document.querySelectorAll('.gallery-img');
+  const galleryDots = document.querySelectorAll('.gallery-dot');
+  const galleryCounter = document.getElementById('galleryCounter');
+  let galCur = 0;
+
+  function galleryGoTo(n) {
+    galleryImgs[galCur].classList.remove('active');
+    galleryDots[galCur].classList.remove('active');
+    galCur = (n + galleryImgs.length) % galleryImgs.length;
+    galleryImgs[galCur].classList.add('active');
+    galleryDots[galCur].classList.add('active');
+    galleryCounter.textContent = (galCur + 1) + ' / ' + galleryImgs.length;
+  }
+
+  function closeGallery() {
+    galleryOverlay.classList.remove('active');
+  }
+
+  window.addEventListener('click', (e) => {
+    if (e.target === bookingModal) bookingModal.classList.remove('active');
+    if (e.target === quoteModal) quoteModal.classList.remove('active');
+    if (e.target === galleryOverlay) closeGallery();
+  });
+
+  document.getElementById('openGalleryModal').addEventListener('click', () => {
+    galleryGoTo(0);
+    galleryOverlay.classList.add('active');
+  });
+
+  document.getElementById('galleryClose').addEventListener('click', closeGallery);
+  document.getElementById('galleryPrev').addEventListener('click', () => galleryGoTo(galCur - 1));
+  document.getElementById('galleryNext').addEventListener('click', () => galleryGoTo(galCur + 1));
+
+  let touchStartX = 0;
+  document.querySelector('.gallery-stage').addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+  document.querySelector('.gallery-stage').addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) galleryGoTo(diff > 0 ? galCur + 1 : galCur - 1);
+  });
+</script>
+
+</body>
+</html>
